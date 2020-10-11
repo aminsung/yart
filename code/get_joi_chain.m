@@ -10,6 +10,12 @@ parse(p,varargin{:});
 retarget_option = p.Results.retarget_option;
 
 switch lower(chain.name)
+    case 'alphred'
+        joi_types = {'l1hy', 'l1hp', 'l1kp', 'l1e', ...
+                     'l2hy', 'l2hp', 'l2kp', 'l2e', ...
+                     'l3hy', 'l3hp', 'l3kp', 'l3e', ...
+                     'l4hy', 'l4hp', 'l4kp', 'l4e'}; % limb N, hip yaw, hip pitch, knee pitch
+        joi_idxs = [3,4,5,6, 7,8,9,10, 11,12,13,14, 15,16,17,18];
     case 'atlas'
         joi_types = {'rh','re','rs','lh','le','ls',... % hand, elbow, shoulder
             'root','rp','rk','ra','lp','lk','la','head'}; % root (pelvis), knee, ankle, head
