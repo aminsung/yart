@@ -9,7 +9,8 @@ end
 if ~isfield(chain,'link')
     link_table = [];
 elseif ~isempty(chain.link) && length(chain.link) > 1
-    link_table = [0 chain.link(2:11).joint_idx]; % can be thought of a dictionary; {link_idx: associated joint_idx}
+%     link_table = [0 chain.link(2:11).joint_idx]; % can be thought of a dictionary; {link_idx: associated joint_idx}
+    link_table = [0 chain.link(2:chain.n_link).joint_idx]; % can be thought of a dictionary; {link_idx: associated joint_idx}
 else
     link_table = [];
 end

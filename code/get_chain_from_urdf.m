@@ -185,6 +185,9 @@ for i_idx = 1:length(chain.rev_joint_names)
     chain.rev_joint_idxs(i_idx) = idx_cell(chain.joint_names,chain.rev_joint_names{i_idx});
 end
 
+% rbt_builtin = importrobot(strrep(urdf_path, 'xml', 'urdf'));
+% chain.builtin = rbt_builtin;
+
 % Center the robot
 if CENTER_ROBOT
     chain.joint(chain.joint(get_topmost_idx(chain)).childs).p_offset = [0,0,0]';
