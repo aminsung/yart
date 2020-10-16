@@ -42,6 +42,8 @@ for i_idx = 1:chain_model.n_link % for all link
     chain_model.link(i_idx).I = I_i;
 end
 
+chain_model = postprocess_properties(chain_model);
+
 % Compute total CoM position
 M = 0; MC = [0,0,0]';
 for i_idx = 1:chain_model.n_link
@@ -133,10 +135,31 @@ else
 end
 
 
-
-
-
-
-
-
-
+function chain_model = postprocess_properties(chain_model)
+    % Modify chain_model's properties to your liking.
+    model_name = chain_model.name;
+    switch model_name
+        case 'alphred'
+            % body
+            chain_model.link(3).mass = 4.09454665;
+            
+            % limb 1 shoulder, femur, tibia
+            chain_model.link(4).mass = 2.37194076;
+            chain_model.link(5).mass = 0.46336796;
+            chain_model.link(6).mass = 0.49505644;
+            
+            % limb 2 shoulder, femur, tibia
+            chain_model.link(8).mass = 2.37194076;
+            chain_model.link(9).mass = 0.46336796;
+            chain_model.link(10).mass = 0.49483113;
+            
+            % limb 3 shoulder, femur, tibia
+            chain_model.link(12).mass = 2.37194076;
+            chain_model.link(13).mass = 0.46336796;
+            chain_model.link(14).mass = 0.49505644;
+            
+            % limb 4 shoulder, femur, tibia
+            chain_model.link(16).mass = 2.37194076;
+            chain_model.link(17).mass = 0.46336796;
+            chain_model.link(18).mass = 0.49483113;
+    end
