@@ -79,40 +79,40 @@ switch model_name
         % Self-Collision check indices
         chain_model.sc_checks = get_sc_checks(chain_model);
         
-    case 'alphred'
-        % limb 2 shoulder
-        p = chain_model.link(8).capsule.p;
-        R = chain_model.link(8).capsule.R;
-        radius = chain_model.link(8).capsule.radius;
-        height = chain_model.link(8).capsule.height;
-        res = 30;
-        radius = radius * 1.0;
-        height = height * 1.0;
-        cap = get_capsule_shape(p,R,radius,height,res);
-        chain_model.link(8).capsule = cap;
-        
-        % limb 2 femur
-        p = chain_model.link(9).capsule.p;
-        R = chain_model.link(9).capsule.R;
-        radius = chain_model.link(9).capsule.radius;
-        height = chain_model.link(9).capsule.height;
-        res = 30;
-        radius = radius * 1.0;
-        height = height * 1.0;
-        cap = get_capsule_shape(p,R,radius,height,res);
-        chain_model.link(9).capsule = cap;
-        
-        % limb 2 tibia
-        p = chain_model.link(10).capsule.p;
-        R = chain_model.link(10).capsule.R;
-        radius = chain_model.link(10).capsule.radius;
-        height = chain_model.link(10).capsule.height;
-        res = 30;
-        radius = radius * 0.8;
-        height = height * 1.0;
-        cap = get_capsule_shape(p,R,radius,height,res);
-        chain_model.link(10).capsule = cap;
-        
+%     case 'alphred'
+%         % limb 2 shoulder
+%         p = chain_model.link(8).capsule.p;
+%         R = chain_model.link(8).capsule.R;
+%         radius = chain_model.link(8).capsule.radius;
+%         height = chain_model.link(8).capsule.height;
+%         res = 30;
+%         radius = radius * 1.0;
+%         height = height * 1.0;
+%         cap = get_capsule_shape(p,R,radius,height,res);
+%         chain_model.link(8).capsule = cap;
+%         
+%         % limb 2 femur
+%         p = chain_model.link(9).capsule.p;
+%         R = chain_model.link(9).capsule.R;
+%         radius = chain_model.link(9).capsule.radius;
+%         height = chain_model.link(9).capsule.height;
+%         res = 30;
+%         radius = radius * 1.0;
+%         height = height * 1.0;
+%         cap = get_capsule_shape(p,R,radius,height,res);
+%         chain_model.link(9).capsule = cap;
+%         
+%         % limb 2 tibia
+%         p = chain_model.link(10).capsule.p;
+%         R = chain_model.link(10).capsule.R;
+%         radius = chain_model.link(10).capsule.radius;
+%         height = chain_model.link(10).capsule.height;
+%         res = 30;
+%         radius = radius * 1.0;
+%         height = height * 1.0;
+%         cap = get_capsule_shape(p,R,radius,height,res);
+%         chain_model.link(10).capsule = cap;
+%         
 end
 
 
