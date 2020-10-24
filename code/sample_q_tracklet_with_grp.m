@@ -33,7 +33,11 @@ for j_idx = 1:n_joint % for each dim
     t_test = linspace(0,2,n_test)'; % test times
     hyp_mu = [1,1.0]; % [gain,len]
     gain_var = joint_range(2)-joint_range(1);
-    hyp_var = [gain_var/2,1.0]; % [gain,len]
+    if strcmp(chain_model1.name, 'alphred')
+        hyp_var = [0.05, 1.0];
+    else
+        hyp_var = [gain_var/2,1.0]; % [gain,len]
+    end
     eps_ru = 0.02; % epsilon run-up
     grp1d = init_grp1d(t_anchor,x_anchor,l_anchor,t_test,hyp_mu,hyp_var,'eps_ru',eps_ru);
     
